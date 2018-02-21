@@ -56,14 +56,16 @@ function verifyCrops() {
     try {
         for(var i = 0; i < 7; i++){
             if (cropsFieldset.getElementsByTagName("input")[i].checked) {
-                cropscomplete = true; 
+                cropsComplete = true; 
                 messageElement.innerHTML = ""; //clear previous message or recommendation
                 testFormCompleteness(); i=8;
-            } if (i === 7) {
+            } 
+        }
+            if (i === 7) {
                 throw "Please select at least one crop.";
             }
         }
-    } catch (message) {
+    catch (message) {
         cropsComplete = false;
         messageHeadElement.innerHTML = "";
         //remove any former recommendation heading 
@@ -71,6 +73,7 @@ function verifyCrops() {
         //display error message
     }
 }
+// In the code above basically created a function using the try method to basically make sure that atleast one check box from the following is checked or else it will give an error message.
 
 /* verify months text box entry is between 1 and 12 */
 function verifyMonths() {
